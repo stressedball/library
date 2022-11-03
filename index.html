@@ -9,21 +9,35 @@
 <body>
     <div class="shelve-container">
         <h4>Book library</h4>
+        <table class="shelve">
+            <tr class="shelve-header">
+                <th>Book title</th>
+                <th>Author</th>
+                <th>Status</th>
+                <th>Remove</th>
+            </tr>
+        </table>
     </div>
-    <div class="book-register">
-        <form>
-            <label for="title">Title</label>
-            <input id="title">
-        </form>
-        <form>
-            <label for="author">Author</label>
-            <input id="author">
-        </form>
-        <form>
-            <label for="status">Status</label>
-            <input id="status">
-        </form>
-        <button type="submit">Add book</button>
+    <div class="book-main hidden display">
+        <div class="book-add-container hidden display">
+            <h3>Library</h3>
+            <button type="submit" id="book-add-button">New book</button>
+        </div>
+        <div class="book-form-container hidden display">
+            <form>
+                <label for="title">Title</label>
+                <input id="title">
+            </form>
+            <form>
+                <label for="author">Author</label>
+                <input id="author">
+            </form>
+            <form>
+                <label for="status">Status</label>
+                <input id="status">
+            </form>
+            <button type="submit" id="book-submit-button">Add book to collection</button>
+        </div>
     </div>
 </body>
 </html>
