@@ -12,6 +12,7 @@ body {
     width: 100vw;
     display: grid;
     grid-template-columns: 60vw 40vw;
+    grid-template-rows: 95vh 5vh;
     overflow: hidden;
 }
 
@@ -19,6 +20,12 @@ body {
     min-width: 15vw;
     min-height: 15vw;
     border-radius: 50%;
+}
+
+#book-add-button.display {
+    max-width: max-content;
+    max-height: max-content;
+    align-self: center;
 }
 
 .book-add-container {
@@ -45,16 +52,17 @@ body {
     padding: 0;
     height: 100%;
     width: 100%;
+    background-color: ;
 }
 
 .book-main.display {
     display: flex;
     flex-direction: column;
-
+    gap: 5vh;
 }
 
 .book-main.hidden {
-    background-color: #C60C30;
+    background-color: ;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -63,28 +71,71 @@ body {
 }
 
 .book-form-container {
-    background-color: #DE3163;
+    background-color: ;
 }
 
 .book-form-container.display {
+    align-self: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+    transition: display 2000ms;
+    max-width: fit-content;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .book-form-container.hidden {
     display: none;
-    background-color: #DE3163;
+    background-color: ;
 }
 
-.shelve-container {
-    background-color: #fd5c63;
+button {
+    border: none;
+    min-width: 12vw;
+    min-height: 5vh;
+    border-radius: 18px;
+    background-color: ;
+}
+
+footer {
+    grid-area: 2/1/2/3;
+    text-align: center;
+    align-self: center;
+}
+
+label {
+    display: block;
 }
 
 .shelve {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    background: linear-gradient(20deg, #DDA0DD 50%, #662d91 30%);
+    flex-direction: column;
+}
+
+.shelve-container {
+    margin: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vw;
     border-spacing: 0;
 }
 
-th, td {
-    border: 1px solid black;
+.tile-container {
+    background-color: #E6E6FA;
+    border: 2px solid black;
+    padding : 20px;
+    border-radius: 10px;
+    min-width: 15vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    align-items: center;
+    justify-content: center;
 }
 
 

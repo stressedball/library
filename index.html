@@ -7,23 +7,29 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="shelve-container">
+    <div class="shelve">
         <h4>Book library</h4>
-        <table class="shelve">
-            <tr class="shelve-header">
-                <th>Book title</th>
-                <th>Author</th>
-                <th>Status</th>
-                <th>Remove</th>
-            </tr>
-        </table>
+        <div class="shelve-container">
+            <div class="tile-container">
+                <p class="title">Book</p>
+                <p class="author">Author</p>
+                <p class="status">Status</p>
+                <button class="remove">Remove</button>
+            </div>
+            <div class="tile-container">
+                <p class="title">Book</p>
+                <p class="author">Author</p>
+                <p class="status">Status</p>
+                <button class="remove">Remove</button>
+            </div>
+        </div>
     </div>
-    <div class="book-main hidden display">
-        <div class="book-add-container hidden display">
+    <div class="book-main hidden">
+        <div class="book-add-container hidden">
             <h3>Library</h3>
             <button type="submit" id="book-add-button">New book</button>
         </div>
-        <div class="book-form-container hidden display">
+        <div class="book-form-container hidden">
             <form>
                 <label for="title">Title</label>
                 <input id="title">
@@ -39,5 +45,6 @@
             <button type="submit" id="book-submit-button">Add book to collection</button>
         </div>
     </div>
+    <footer>Talal</footer>
 </body>
 </html>
