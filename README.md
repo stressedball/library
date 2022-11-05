@@ -12,7 +12,7 @@ Make table. Each row displays a book.
 Right part :
 Will allow user to register and add a book to the collection
 - a rectangular shape
-- 5 inputs max : Name of book, author, status...
+- 5 inputs max : Name of book, author, isRead...
 - submit button
 
 Make CSS.

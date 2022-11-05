@@ -14,6 +14,8 @@ body {
     grid-template-columns: 60vw 40vw;
     grid-template-rows: 95vh 5vh;
     overflow: hidden;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.05em;
 }
 
 #book-add-button {
@@ -96,7 +98,11 @@ button {
     min-width: 12vw;
     min-height: 5vh;
     border-radius: 18px;
-    background-color: ;
+    background-color: beige;
+}
+
+button:hover {
+    background-color: tan;
 }
 
 footer {
@@ -118,11 +124,16 @@ label {
 }
 
 .shelve-container {
-    margin: 25px;
+    margin: 30px;
     display: flex;
     flex-wrap: wrap;
     gap: 3vw;
     border-spacing: 0;
+    justify-content: space-between;
+}
+
+.shelve h4 {
+    padding-left: 30px;
 }
 
 .tile-container {
@@ -131,6 +142,7 @@ label {
     padding : 20px;
     border-radius: 10px;
     min-width: 15vw;
+    
     display: flex;
     flex-direction: column;
     gap: 3vh;
@@ -138,5 +150,7 @@ label {
     justify-content: center;
 }
 
-
-
+::-webkit-scrollbar {
+    /* width: 10px;
+    height: 5px; */
+}

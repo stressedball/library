@@ -9,19 +9,10 @@
 <body>
     <div class="shelve">
         <h4>Book library</h4>
+        <div class="shelve-display">
+
+        </div>
         <div class="shelve-container">
-            <div class="tile-container">
-                <p class="title">Book</p>
-                <p class="author">Author</p>
-                <p class="status">Status</p>
-                <button class="remove">Remove</button>
-            </div>
-            <div class="tile-container">
-                <p class="title">Book</p>
-                <p class="author">Author</p>
-                <p class="status">Status</p>
-                <button class="remove">Remove</button>
-            </div>
         </div>
     </div>
     <div class="book-main hidden">
@@ -30,17 +21,17 @@
             <button type="submit" id="book-add-button">New book</button>
         </div>
         <div class="book-form-container hidden">
-            <form>
+            <form >
                 <label for="title">Title</label>
-                <input id="title">
+                <input type="text" id="title">
             </form>
             <form>
                 <label for="author">Author</label>
-                <input id="author">
+                <input type="text" id="author">
             </form>
             <form>
-                <label for="status">Status</label>
-                <input id="status">
+                <label for="isRead">isRead</label>
+                <input id="isRead">
             </form>
             <button type="submit" id="book-submit-button">Add book to collection</button>
         </div>
