@@ -29,10 +29,13 @@
                 <label for="author">Author</label>
                 <input type="text" id="author">
             </form>
-            <form>
-                <label for="isRead">isRead</label>
-                <input id="isRead">
-            </form>
+            <div><span>Status</span>
+                <label class="switch" for="isRead">
+                    <input type="checkbox" id="isRead">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
             <button type="submit" id="book-submit-button">Add book to collection</button>
         </div>
     </div>

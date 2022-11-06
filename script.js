@@ -24,11 +24,6 @@ function onLoad() {
     //get books in HTML and display them
     library.push(book1, book2);
     displayBooks();
-    const removeButtons = document.querySelectorAll('button.remove');
-    for (let button of removeButtons) {
-        button.addEventListener('click', removeBook);
-    }
-
 }
 
 function removeBook(event) {
@@ -49,7 +44,7 @@ function addBook() {
     let title = document.querySelector('input#title');
     let author = document.querySelector('input#author');
     let isRead = document.querySelector('input#isRead');
-    const book = new Book(title.value, author.value, isRead.value);
+    const book = new Book(title.value, author.value, isRead);
     library.push(book);
     displayBooks();
 }
@@ -59,11 +54,9 @@ function displayBooks() {
         const tiles =  document.querySelectorAll('.tile-container');
         if (library.indexOf(book) < tiles.length) {
             if (tiles.length > 0) {
-                console.log('here', library.indexOf(book))
                 continue;
             }
         } 
-
 
         //need to figure out a way to stop the loop from going through the library without printing again the first books
         //for ex if last book is 'Les Misérables', DONT ADD ALL THE BOOKS FROM LES MISERABLES TO library [0]
@@ -77,15 +70,36 @@ function displayBooks() {
         let author = document.createElement('p');
         author.classList.add('author');
         let isRead = document.createElement('p');
+        
         isRead.classList.add('isRead');
         tile.appendChild(title);
         tile.appendChild(author);
-        tile.appendChild(isRead);
+
+        let statusDiv = document.createElement('div');
+        let span = document.createElement('span');
+        span.textContent = 'Status';
+        statusDiv.appendChild(span);
+        let label = document.createElement('label');
+        label.classList.add('switch');
+        let input = document.createElement('input');
+        input.type = 'checkbox';
+        let slider = document.createElement('span');
+        slider.classList.add('slider');
+        label.appendChild(input);
+        label.appendChild(slider);
+        statusDiv.appendChild(label);
+        tile.appendChild(statusDiv);
+        // tile.appendChild(isRead);
+
         tile.setAttribute('data-index', `${library.indexOf(book)}`);
         //details appear on HTML
         title.textContent = book.title;
         author.textContent = book.author;
-        isRead.textContent = book.isRead;
+        if (book.isRead.checked === true) {
+            input.checked = true;
+        } else {
+            isRead.textContent = 'Not read yet';
+        }
         let removeButton = document.createElement('button');
         removeButton.classList.add('remove');
         removeButton.setAttribute('data-index', `${library.indexOf(book)}`);
@@ -94,7 +108,10 @@ function displayBooks() {
 
     }
     
-
+    const removeButtons = document.querySelectorAll('button.remove');
+    for (let button of removeButtons) {
+        button.addEventListener('click', removeBook);
+    }
 }
 
 //display hidden form
