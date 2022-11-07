@@ -19,8 +19,8 @@ body {
 }
 
 #book-add-button {
-    min-width: 15vw;
-    min-height: 15vw;
+    min-width: clamp(10vw, 15vw, 20vw);
+    min-height: clamp(10vw, 15vw, 20vw);
     border-radius: 50%;
 }
 
@@ -28,6 +28,7 @@ body {
     max-width: max-content;
     max-height: max-content;
     align-self: center;
+
 }
 
 .book-add-container {
@@ -37,11 +38,13 @@ body {
     flex-direction: column;
     text-align: center;
     gap: 5vh;
+    transition: transform 1000ms ease-out;
 }
 
 .book-add-container.hidden {
     max-height: 20vh;
     max-width: 30vw;
+    transform: translateY(30vh);
 }
 
 .book-add-container h3 {
@@ -68,8 +71,6 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .book-form-container {
@@ -82,14 +83,15 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 3vh;
-    transition: display 2000ms;
+    transform: translateY(0);
+    transition: transform 1000ms ease-out;
     max-width: fit-content;
     padding: 20px;
     border-radius: 20px;
 }
 
 .book-form-container.hidden {
-    display: none;
+    transform: translateY(100vh);
     /* background-color: ; */
 }
 
@@ -111,9 +113,18 @@ footer {
     align-self: center;
 }
 
-/* label {
-    display: block;
-} */
+form, .toggle {
+    display: flex;
+    flex-direction: column;
+}
+
+.round {
+    border-radius: 25px;
+}
+
+.round:before {
+    border-radius: 25px;
+}
 
 .shelve {
     overflow-y: scroll;
@@ -138,8 +149,8 @@ footer {
 
 .switch {
     position: relative;
-    height: 38px;
-    width: 68px;
+    height: 50px;
+    width: 120px;
     display: inline-block;
 }
 
@@ -149,12 +160,15 @@ footer {
 }
 
 .switch input:checked + .slider {
-    background-color: green;
+    background-color: black;
 }
 
-.switch input:checked + .slider::before {
-    transform: translateX(30px);
-    transition: transform 400ms;
+.switch input:checked + .slider:before {
+    transform: translateX(calc(120px - 44px - 4px));
+    transition: transform 500ms ease-out;
+    content: 'Read';
+    font-size: 0.8em;
+    text-align: center;
 }
 
 .slider {
@@ -168,11 +182,15 @@ footer {
 
 .slider:before {
     position: absolute;
-    content: '';
+    content: 'Not read';
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+    font-size: 0.8em;
     top: 4px;
     left: 4px;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     background-color: white;
     transition: transform 400ms;
 }
@@ -183,12 +201,15 @@ footer {
     padding : 20px;
     border-radius: 10px;
     min-width: 15vw;
-    
     display: flex;
     flex-direction: column;
     gap: 3vh;
     align-items: center;
     justify-content: center;
+}
+
+.toggle {
+    display: flex;
 }
 
 ::-webkit-scrollbar {
